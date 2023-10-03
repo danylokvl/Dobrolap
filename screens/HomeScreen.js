@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet } from "react-native";
 import Headline from "../components/typography/Headline";
+import { Ionicons } from "@expo/vector-icons";
 
 const HomeScreen = () => {
   return (
