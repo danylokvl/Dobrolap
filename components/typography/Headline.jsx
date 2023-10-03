@@ -8,7 +8,7 @@ const Headline = ({ children }) => {
 const styles = StyleSheet.create({
   textStyle: {
     color: COLORS.onBackground,
-    fontFamily: "fixelDisplay-bold",
+    fontFamily: "FixelDisplay-Bold",
     fontSize: 24,
   },
 });

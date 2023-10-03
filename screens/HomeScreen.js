@@ -1,9 +1,10 @@
 import { Text, View, StyleSheet } from "react-native";
+import Headline from "../components/typography/Headline";
 
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Hello, you are on the home Screen !</Text>
+      <Headline>Hello, you are on the home Screen !</Headline>
     </View>
   );
 };

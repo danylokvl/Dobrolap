@@ -1,15 +1,14 @@
+import { useEffect, useState } from "react";
+import { Text } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import {
-  DiceSix,
-  Display4K,
-  HomeSimpleDoor,
-  Iconoir,
-} from "iconoir-react-native";
+import * as Font from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
 
 import { COLORS } from "./constants/colors";
+import Loading from "./screens/Loading";
 import HomeScreen from "./screens/HomeScreen";
 import ChatScreen from "./screens/ChatScreen";
 import RequestsScreen from "./screens/RequestsScreen";
@@ -19,15 +18,17 @@ const BottomTabs = createBottomTabNavigator();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    "fixelDisplay-bold": require("./assets/fonts/fixelDisplay-bold.ttf"),
-    "fixelDisplay-semiBold": require("./assets/fonts/fixelDisplay-semiBold.ttf"),
-    "fixelDisplay-medium": require("./assets/fonts/fixelDisplay-medium.ttf"),
-    "fixelDisplay-regular": require("./assets/fonts/fixelDisplay-regular.ttf"),
-    "fixelText-bold": require("./assets/fonts/fixelText-bold.ttf"),
-    "fixelText-semiBold": require("./assets/fonts/fixelText-semiBold.ttf"),
-    "fixelText-medium": require("./assets/fonts/fixelText-medium.ttf"),
-    "fixelText-regular": require("./assets/fonts/fixelText-regular.ttf"),
+    "FixelDisplay-Bold": require("./assets/fonts/FixelDisplay-Bold.ttf"),
+    "FixelDisplay-SemiBold": require("./assets/fonts/FixelDisplay-SemiBold.ttf"),
+    "FixelDisplay-Medium": require("./assets/fonts/FixelDisplay-Medium.ttf"),
+    "FixelDisplay-Regular": require("./assets/fonts/FixelDisplay-Regular.ttf"),
+    "FixelText-Bold": require("./assets/fonts/FixelText-Bold.ttf"),
+    "FixelText-SemiBold": require("./assets/fonts/FixelText-SemiBold.ttf"),
+    "FixelText-Medium": require("./assets/fonts/FixelText-Medium.ttf"),
+    "FixelText-Regular": require("./assets/fonts/FixelText-Regular.ttf"),
   });
+
+  if (!fontsLoaded) return <Loading />;
 
   return (
     <NavigationContainer>
@@ -45,14 +46,6 @@ export default function App() {
           component={HomeScreen}
           options={{
             title: "Прихисток",
-            tabBarIcon: () => (
-              <Iconoir
-                name={Display4K}
-                width={24}
-                height={24}
-                color={COLORS.onBackgroundVariant}
-              />
-            ),
           }}
         />
         <BottomTabs.Screen
