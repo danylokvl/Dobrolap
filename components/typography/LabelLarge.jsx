@@ -8,7 +8,7 @@ const LabelLarge = ({ children }) => {
 const styles = StyleSheet.create({
   textStyle: {
     color: COLORS.onBackground,
-    fontFamily: "fixelDisplay-medium",
+    fontFamily: "FixelDisplay-Medium",
     fontSize: 14,
     lineHeight: 20,
   },

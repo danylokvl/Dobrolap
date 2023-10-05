@@ -8,7 +8,7 @@ const Body14 = ({ children }) => {
 const styles = StyleSheet.create({
   textStyle: {
     color: COLORS.onBackground,
-    fontFamily: "fixelText-regular",
+    fontFamily: "FixelText-Regular",
     fontSize: 14,
     lineHeight: 20,
   },

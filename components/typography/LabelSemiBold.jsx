@@ -8,7 +8,7 @@ const LabelSemiBold = ({ children }) => {
 const styles = StyleSheet.create({
   textStyle: {
     color: COLORS.onBackground,
-    fontFamily: "fixelDisplay-semiBold",
+    fontFamily: "FixelDisplay-SemiBold",
     fontSize: 16,
     lineHeight: "auto",
   },

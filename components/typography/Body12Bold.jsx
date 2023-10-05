@@ -8,7 +8,7 @@ const Body12Bold = ({ children }) => {
 const styles = StyleSheet.create({
   textStyle: {
     color: COLORS.onBackground,
-    fontFamily: "fixelText-bold",
+    fontFamily: "FixelText-Bold",
     fontSize: 12,
   },
 });
