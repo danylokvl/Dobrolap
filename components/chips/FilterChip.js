@@ -4,7 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 import { COLORS } from "../../constants/colors";
 
-const FilterChip = ({ children }) => {
+const FilterChip = ({ children, scrollViewRef }) => {
   const [chipEnabled, setChipEnabled] = useState(false);
   return (
     <Pressable
@@ -13,7 +13,10 @@ const FilterChip = ({ children }) => {
         styles.chipDisabledStyle,
         chipEnabled && styles.chipEnabledStyle,
       ]}
-      onPress={() => setChipEnabled(!chipEnabled)}
+      onPress={() => {
+        setChipEnabled(!chipEnabled);
+        if (scrollViewRef) scrollViewRef.current.scrollToEnd();
+      }}
     >
       {chipEnabled && (
         <Ionicons
@@ -38,6 +41,7 @@ const styles = StyleSheet.create({
   chip: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "center",
     gap: 8,
     borderRadius: 8,
     paddingVertical: 10,

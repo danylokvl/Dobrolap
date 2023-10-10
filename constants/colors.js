@@ -17,4 +17,6 @@ export const COLORS = {
   outline: "#89938E",
   backgroundVariant: "#DBE5DF",
   onBackgroundVariant: "#3F4945",
+  cardShadowColor: "#788B65",
+  shadowColor: "#2E3626",
 };

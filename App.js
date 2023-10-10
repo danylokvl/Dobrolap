@@ -103,7 +103,7 @@ export default function App() {
             name='Requests'
             component={RequestsScreen}
             options={{
-              title: "Тварини",
+              title: "Тварини в біді",
               tabBarIcon: ({ size, focused }) => (
                 <>
                   <Ionicons

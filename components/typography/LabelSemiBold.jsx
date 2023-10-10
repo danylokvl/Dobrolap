@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     color: COLORS.onBackground,
     fontFamily: "FixelDisplay-SemiBold",
     fontSize: 16,
-    lineHeight: "auto",
   },
 });
 
