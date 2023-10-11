@@ -13,6 +13,9 @@ const LargeFAB = (props) => {
 
 const styles = StyleSheet.create({
   button: {
+    position: "absolute",
+    bottom: 16,
+    alignSelf: "center",
     borderRadius: 16,
     backgroundColor: COLORS.primaryContainer,
     color: COLORS.onPrimaryContainer,
@@ -21,6 +24,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 16,
     gap: 8,
+    elevation: 6,
+    shadowColor: COLORS.shadowColor,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 1,
+    shadowRadius: 20,
   },
   text: {
     fontFamily: "FixelDisplay-SemiBold",
