@@ -1,11 +1,11 @@
 import { Text, View, StyleSheet } from "react-native";
 import Headline from "../components/typography/Headline";
-import { Ionicons } from "@expo/vector-icons";
-
+import IconButton from "../components/buttons/IconButton";
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <Headline>Hello, you are on the home Screen !</Headline>
+      <IconButton icon='home-outline' />
     </View>
   );
 };

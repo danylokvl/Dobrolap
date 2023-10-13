@@ -1,9 +1,14 @@
-import { View, StyleSheet, ScrollView, Animated } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import { useRef } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import FilterChip from "../components/chips/FilterChip";
 import RequestScreenCard from "../components/cards/RequestScreenCard";
+import RequestDetailsScreen from "./RequestDetailsScreen";
 import LargeFAB from "../components/buttons/LargeFAB";
+
+const Stack = createNativeStackNavigator();
 
 const RequestsScreen = () => {
   const scrollViewRef = useRef(null);
@@ -41,7 +46,8 @@ const styles = StyleSheet.create({
   },
 
   rootContainer: {
-    paddingVertical: 50,
+    paddingTop: 50,
+    paddingBottom: 100,
     paddingHorizontal: 8,
   },
 

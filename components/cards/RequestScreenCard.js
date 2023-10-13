@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Image,
   View,
@@ -7,6 +8,7 @@ import {
   Text,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 import TitleLarge from "../typography/TitleLarge";
 import LabelSemiBold from "../typography/LabelSemiBold";
@@ -19,6 +21,9 @@ import { COLORS } from "../../constants/colors";
 const windowDimensions = Dimensions.get("window");
 
 const RequestScreenCard = () => {
+  const [helpButtonIsPressed, setHelpButtonIsPressed] = useState(false);
+  const [detailsButtonIsPressed, setDetailsButtonIsPressed] = useState(false);
+  const navigation = useNavigation();
   return (
     <View style={styles.card}>
       <View style={styles.cardContent}>
@@ -78,21 +83,40 @@ const RequestScreenCard = () => {
       </View>
       <View style={styles.cardButtons}>
         <Pressable
-          style={[
-            styles.cardButtons__button,
-            styles.cardButtons__detailsButton,
-          ]}
+          onPress={() => navigation.navigate("Request Details")}
+          onPressIn={() => setDetailsButtonIsPressed(true)}
+          onPressOut={() => setDetailsButtonIsPressed(false)}
+          style={[styles.cardButtons__button]}
         >
-          <Text style={[styles.cardButtons__text, { color: COLORS.primary }]}>
+          <Text
+            style={[
+              styles.cardButtons__text,
+              styles.cardButtons__detailsButton,
+              detailsButtonIsPressed
+                ? styles.cardButtons__detailsButton_pressed
+                : null,
+            ]}
+          >
             Дeтальніше
           </Text>
         </Pressable>
         <Pressable
-          style={[styles.cardButtons__button, styles.cardButtons__helpButton]}
+          onPressIn={() => setHelpButtonIsPressed(true)}
+          onPressOut={() => setHelpButtonIsPressed(false)}
+          style={({ pressed }) => [
+            styles.cardButtons__button,
+            styles.cardButtons__helpButton,
+            pressed ? { backgroundColor: COLORS.primaryContainer } : null,
+          ]}
         >
-          {/*       <Ionicons name='heart' size={20} color={COLORS.onPrSecTertErr} />*/}
           <Text
-            style={[styles.cardButtons__text, { color: COLORS.onPrSecTertErr }]}
+            style={[
+              styles.cardButtons__text,
+              styles.cardButtons__helpButton,
+              helpButtonIsPressed
+                ? styles.cardButtons__helpButton_pressed
+                : null,
+            ]}
           >
             Допомогти
           </Text>
@@ -197,13 +221,23 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
   },
   cardButtons__detailsButton: {
+    color: COLORS.primary,
     alignItems: "center",
+  },
+  cardButtons__detailsButton_pressed: {
+    color: COLORS.secondary,
+    textDecorationLine: "underline",
   },
   cardButtons__helpButton: {
     borderTopLeftRadius: 11,
     borderBottomRightRadius: 11,
+    color: COLORS.onPrSecTertErr,
     backgroundColor: COLORS.primary,
     alignItems: "center",
+  },
+  cardButtons__helpButton_pressed: {
+    color: COLORS.onPrimaryContainer,
+    backgroundColor: COLORS.primaryContainer,
   },
 });
 

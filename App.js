@@ -1,6 +1,7 @@
 import { View, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
@@ -9,7 +10,7 @@ import { COLORS } from "./constants/colors";
 import Loading from "./screens/Loading";
 import HomeScreen from "./screens/HomeScreen";
 import ChatScreen from "./screens/ChatScreen";
-import RequestsScreen from "./screens/RequestsScreen";
+import HelpScreen from "./screens/HelpScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 
 const BottomTabs = createBottomTabNavigator();
@@ -39,7 +40,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <NavigationContainer theme={DobrolapTheme}>
-        <StatusBar style='auto' />
+        <StatusBar style='auto' backgroundColor={COLORS.background} />
 
         <BottomTabs.Navigator
           screenOptions={{
@@ -100,8 +101,8 @@ export default function App() {
             }}
           />
           <BottomTabs.Screen
-            name='Requests'
-            component={RequestsScreen}
+            name='Help'
+            component={HelpScreen}
             options={{
               title: "Тварини в біді",
               tabBarIcon: ({ size, focused }) => (
