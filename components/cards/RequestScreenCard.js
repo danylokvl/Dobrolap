@@ -7,7 +7,7 @@ import {
   Pressable,
   Text,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 import TitleLarge from "../typography/TitleLarge";
@@ -38,7 +38,7 @@ const RequestScreenCard = () => {
               <Body12>Волонтер</Body12>
             </View>
           </View>
-          <Ionicons
+          <MaterialIcons
             name='bookmark-outline'
             size={24}
             color={COLORS.onBackground}
@@ -53,10 +53,14 @@ const RequestScreenCard = () => {
           <View
             style={[styles.cardImage__chip, styles.cardImage__locationChip]}
           >
-            <CardChip icon='location-outline'>Київ</CardChip>
+            <CardChip icon='map-marker-outline' materialIcons={false}>
+              Київ
+            </CardChip>
           </View>
           <View style={[styles.cardImage__chip, styles.cardImage__timeChip]}>
-            <CardChip icon='time-outline'>2 дні тому</CardChip>
+            <CardChip icon='access-time' materialIcons>
+              2 дні тому
+            </CardChip>
           </View>
 
           <View
@@ -65,7 +69,9 @@ const RequestScreenCard = () => {
               styles.cardImage__alreadyHelpedChip,
             ]}
           >
-            <CardChip icon='people-outline'>12 людей вже допомогли</CardChip>
+            <CardChip icon='people-outline' materialIcons>
+              12 людей вже допомогли
+            </CardChip>
           </View>
         </View>
         <View style={styles.cardTexts}>
@@ -109,6 +115,15 @@ const RequestScreenCard = () => {
             pressed ? { backgroundColor: COLORS.primaryContainer } : null,
           ]}
         >
+          <MaterialIcons
+            name='volunteer-activism'
+            size={24}
+            color={
+              helpButtonIsPressed
+                ? COLORS.onPrimaryContainer
+                : COLORS.onPrSecTertErr
+            }
+          />
           <Text
             style={[
               styles.cardButtons__text,

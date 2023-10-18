@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 import { COLORS } from "./constants/colors";
 import Loading from "./screens/Loading";
@@ -65,8 +66,8 @@ export default function App() {
               title: "Прихисток",
               tabBarIcon: ({ size, focused }) => (
                 <>
-                  <Ionicons
-                    name={focused ? "home-sharp" : "home-outline"}
+                  <MaterialIcons
+                    name='home-filled'
                     color={
                       focused ? COLORS.primary : COLORS.onBackgroundVariant
                     }
@@ -84,12 +85,8 @@ export default function App() {
               title: "Чати",
               tabBarIcon: ({ size, focused }) => (
                 <>
-                  <Ionicons
-                    name={
-                      focused
-                        ? "chatbox-ellipses-sharp"
-                        : "chatbox-ellipses-outline"
-                    }
+                  <MaterialIcons
+                    name='chat'
                     color={
                       focused ? COLORS.primary : COLORS.onBackgroundVariant
                     }
@@ -104,11 +101,11 @@ export default function App() {
             name='Help'
             component={HelpScreen}
             options={{
-              title: "Тварини в біді",
+              title: "Допомога",
               tabBarIcon: ({ size, focused }) => (
                 <>
-                  <Ionicons
-                    name={focused ? "paw-sharp" : "paw-outline"}
+                  <MaterialIcons
+                    name='volunteer-activism'
                     color={
                       focused ? COLORS.primary : COLORS.onBackgroundVariant
                     }
@@ -127,7 +124,7 @@ export default function App() {
               tabBarIcon: ({ size, focused }) => (
                 <>
                   <Ionicons
-                    name={focused ? "person-sharp" : "person-outline"}
+                    name='person'
                     color={
                       focused ? COLORS.primary : COLORS.onBackgroundVariant
                     }

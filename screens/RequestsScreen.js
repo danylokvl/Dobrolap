@@ -35,7 +35,7 @@ const RequestsScreen = () => {
           <RequestScreenCard />
         </View>
       </ScrollView>
-      <LargeFAB icon='add-outline'>Створити запит</LargeFAB>
+      <LargeFAB icon='add'>Створити запит</LargeFAB>
     </>
   );
 };

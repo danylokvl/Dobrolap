@@ -19,4 +19,5 @@ export const COLORS = {
   onBackgroundVariant: "#3F4945",
   cardShadowColor: "#788B65",
   shadowColor: "#2E3626",
+  neutral95: "#EFF1EE",
 };

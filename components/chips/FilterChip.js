@@ -1,6 +1,6 @@
 import { View, StyleSheet, Text, Pressable } from "react-native";
 import { useState } from "react";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 import { COLORS } from "../../constants/colors";
 
@@ -19,8 +19,8 @@ const FilterChip = ({ children, scrollViewRef }) => {
       }}
     >
       {chipEnabled && (
-        <Ionicons
-          name='checkmark-sharp'
+        <MaterialIcons
+          name='check'
           size={18}
           color={COLORS.onSecondaryContainer}
         />

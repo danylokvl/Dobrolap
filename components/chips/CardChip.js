@@ -1,11 +1,19 @@
 import { View, StyleSheet, Text } from "react-native";
 import { COLORS } from "../../constants/colors";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons";
 
-const CardChip = ({ children, icon }) => {
+const CardChip = ({ children, icon, materialIcons }) => {
   return (
     <View style={styles.chip}>
-      <Ionicons name={icon} size={16} color={COLORS.onPrSecTertErr} />
+      {materialIcons ? (
+        <MaterialIcons name={icon} size={16} color={COLORS.onPrSecTertErr} />
+      ) : (
+        <MaterialCommunityIcons
+          name={icon}
+          size={16}
+          color={COLORS.onPrSecTertErr}
+        />
+      )}
       <Text style={styles.text}>{children}</Text>
     </View>
   );

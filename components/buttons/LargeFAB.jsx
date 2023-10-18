@@ -1,5 +1,5 @@
 import { Pressable, Text, StyleSheet, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import { COLORS } from "../../constants/colors";
 import { useState } from "react";
 
@@ -15,7 +15,7 @@ const LargeFAB = (props) => {
         pressed ? styles.buttonPressed : null,
       ]}
     >
-      <Ionicons
+      <MaterialIcons
         name={props.icon}
         size={24}
         color={isPressed ? COLORS.onPrSecTertErr : COLORS.onPrimaryContainer}

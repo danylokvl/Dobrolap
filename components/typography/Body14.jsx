@@ -1,8 +1,18 @@
 import { Text, StyleSheet } from "react-native";
 import { COLORS } from "../../constants/colors";
 
-const Body14 = ({ children }) => {
-  return <Text style={styles.textStyle}>{children}</Text>;
+const Body14 = ({ children, semiBold, primaryColor }) => {
+  return (
+    <Text
+      style={[
+        styles.textStyle,
+        semiBold ? styles.semiBold : null,
+        primaryColor ? styles.primaryColor : null,
+      ]}
+    >
+      {children}
+    </Text>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -11,6 +21,12 @@ const styles = StyleSheet.create({
     fontFamily: "FixelText-Regular",
     fontSize: 14,
     lineHeight: 20,
+  },
+  semiBold: {
+    fontFamily: "FixelText-SemiBold",
+  },
+  primaryColor: {
+    color: COLORS.primary,
   },
 });
 
