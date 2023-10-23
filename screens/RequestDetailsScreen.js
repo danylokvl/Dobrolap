@@ -10,6 +10,7 @@ import { COLORS } from "../constants/colors";
 import RightArrowBlock from "../components/RightArrowBlock";
 import LargeFAB from "../components/buttons/LargeFAB";
 import CardChip from "../components/chips/CardChip";
+import ImageCarousel from "../components/ImageCarousel";
 
 const screenDimensions = Dimensions.get("screen");
 
@@ -24,10 +25,12 @@ const RequestDetailsScreen = () => {
         </View>
       </View>
       <ScrollView>
-        <Image
+        {/*  <Image
           source={require("../assets/images/dummyImages/dog-near-tank.png")}
           style={styles.RequestDetails__image}
-        />
+  />*/}
+
+        <ImageCarousel />
 
         <View style={styles.RequestDetails__content}>
           <View style={styles.RequestDetails__texts}>
