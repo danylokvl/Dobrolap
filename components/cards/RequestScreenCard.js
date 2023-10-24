@@ -7,7 +7,7 @@ import {
   Pressable,
   Text,
 } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 import TitleLarge from "../typography/TitleLarge";
@@ -38,7 +38,7 @@ const RequestScreenCard = () => {
               <Body12>Волонтер</Body12>
             </View>
           </View>
-          <MaterialIcons
+          <MaterialCommunityIcons
             name='bookmark-outline'
             size={24}
             color={COLORS.onBackground}
@@ -58,7 +58,7 @@ const RequestScreenCard = () => {
             </CardChip>
           </View>
           <View style={[styles.cardImage__chip, styles.cardImage__timeChip]}>
-            <CardChip icon='access-time' materialIcons>
+            <CardChip icon='clock-time-eight-outline' materialIcons>
               2 дні тому
             </CardChip>
           </View>
@@ -69,7 +69,7 @@ const RequestScreenCard = () => {
               styles.cardImage__alreadyHelpedChip,
             ]}
           >
-            <CardChip icon='people-outline' materialIcons>
+            <CardChip icon='account-multiple-outline' materialIcons>
               12 людей вже допомогли
             </CardChip>
           </View>
@@ -109,14 +109,15 @@ const RequestScreenCard = () => {
         <Pressable
           onPressIn={() => setHelpButtonIsPressed(true)}
           onPressOut={() => setHelpButtonIsPressed(false)}
+          onPress={() => navigation.navigate("Help Variants")}
           style={({ pressed }) => [
             styles.cardButtons__button,
             styles.cardButtons__helpButton,
             pressed ? { backgroundColor: COLORS.primaryContainer } : null,
           ]}
         >
-          <MaterialIcons
-            name='volunteer-activism'
+          <MaterialCommunityIcons
+            name='hand-heart-outline'
             size={24}
             color={
               helpButtonIsPressed

@@ -4,14 +4,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { Ionicons } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import { COLORS } from "./constants/colors";
 import Loading from "./screens/Loading";
 import HomeScreen from "./screens/HomeScreen";
 import ChatScreen from "./screens/ChatScreen";
-import HelpScreen from "./screens/HelpScreen";
+import HelpScreenNavigator from "./screens/HelpScreenNavigator";
 import ProfileScreen from "./screens/ProfileScreen";
 
 const BottomTabs = createBottomTabNavigator();
@@ -48,7 +47,7 @@ export default function App() {
             headerShown: false,
             tabBarStyle: {
               backgroundColor: COLORS.backgroundVariant,
-              height: 80,
+              height: 74,
               paddingBottom: 12,
             },
             tabBarActiveTintColor: COLORS.primary,
@@ -66,8 +65,8 @@ export default function App() {
               title: "Прихисток",
               tabBarIcon: ({ size, focused }) => (
                 <>
-                  <MaterialIcons
-                    name='home-filled'
+                  <MaterialCommunityIcons
+                    name={focused ? "home" : "home-outline"}
                     color={
                       focused ? COLORS.primary : COLORS.onBackgroundVariant
                     }
@@ -85,8 +84,8 @@ export default function App() {
               title: "Чати",
               tabBarIcon: ({ size, focused }) => (
                 <>
-                  <MaterialIcons
-                    name='chat'
+                  <MaterialCommunityIcons
+                    name={focused ? "chat" : "chat-outline"}
                     color={
                       focused ? COLORS.primary : COLORS.onBackgroundVariant
                     }
@@ -99,13 +98,13 @@ export default function App() {
           />
           <BottomTabs.Screen
             name='Help'
-            component={HelpScreen}
+            component={HelpScreenNavigator}
             options={{
               title: "Допомога",
               tabBarIcon: ({ size, focused }) => (
                 <>
-                  <MaterialIcons
-                    name='volunteer-activism'
+                  <MaterialCommunityIcons
+                    name={focused ? "hand-heart" : "hand-heart-outline"}
                     color={
                       focused ? COLORS.primary : COLORS.onBackgroundVariant
                     }
@@ -123,8 +122,8 @@ export default function App() {
               title: "Профіль",
               tabBarIcon: ({ size, focused }) => (
                 <>
-                  <Ionicons
-                    name='person'
+                  <MaterialCommunityIcons
+                    name={focused ? "account" : "account-outline"}
                     color={
                       focused ? COLORS.primary : COLORS.onBackgroundVariant
                     }
@@ -144,7 +143,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.primary,
   },
   focusedItem: {
     position: "absolute",

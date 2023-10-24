@@ -1,7 +1,6 @@
 import { StyleSheet, View, Image, Pressable } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import LabelSemiBold from "../components/typography/TitleLarge";
 import LabelLarge from "../components/typography/LabelLarge";
 import Body14 from "../components/typography/Body14";
 import { COLORS } from "../constants/colors";

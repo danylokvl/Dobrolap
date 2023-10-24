@@ -1,6 +1,6 @@
 import { View, StyleSheet, Text, Pressable } from "react-native";
 import { useState } from "react";
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import { COLORS } from "../../constants/colors";
 
@@ -19,7 +19,7 @@ const FilterChip = ({ children, scrollViewRef }) => {
       }}
     >
       {chipEnabled && (
-        <MaterialIcons
+        <MaterialCommunityIcons
           name='check'
           size={18}
           color={COLORS.onSecondaryContainer}

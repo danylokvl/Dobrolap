@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet } from "react-native";
 
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { COLORS } from "../../constants/colors";
 import { useState } from "react";
 
@@ -8,15 +8,23 @@ const IconButton = ({ icon, onPress, variantColor }) => {
   const [isPressed, setIsPressed] = useState(false);
 
   let iconToRender = (
-    <MaterialIcons name={icon} color={COLORS.onPrSecTertErr} size={24} />
+    <MaterialCommunityIcons
+      name={icon}
+      color={COLORS.onPrSecTertErr}
+      size={24}
+    />
   );
   if (variantColor)
     iconToRender = (
-      <MaterialIcons name={icon} color={COLORS.onBackgroundVariant} size={24} />
+      <MaterialCommunityIcons
+        name={icon}
+        color={COLORS.onBackgroundVariant}
+        size={24}
+      />
     );
   else if (isPressed) {
     iconToRender = (
-      <MaterialIcons
+      <MaterialCommunityIcons
         name={icon === "bookmark-outline" ? "bookmark" : icon}
         color={COLORS.onBackgroundVariant}
         size={24}

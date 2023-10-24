@@ -14,24 +14,18 @@ import ImageCarousel from "../components/ImageCarousel";
 
 const screenDimensions = Dimensions.get("screen");
 
-const RequestDetailsScreen = () => {
+const RequestDetailsScreen = ({ navigation }) => {
   return (
     <>
       <View style={styles.RequestDetails__navigation}>
         <BackButton />
         <View style={styles.RequestDetails__rightNavigation}>
           <IconButton icon='bookmark-outline' />
-          <IconButton icon='more-horiz' />
+          <IconButton icon='dots-horizontal' />
         </View>
       </View>
       <ScrollView>
-        {/*  <Image
-          source={require("../assets/images/dummyImages/dog-near-tank.png")}
-          style={styles.RequestDetails__image}
-  />*/}
-
         <ImageCarousel />
-
         <View style={styles.RequestDetails__content}>
           <View style={styles.RequestDetails__texts}>
             <View style={{ gap: 4 }}>
@@ -71,7 +65,7 @@ const RequestDetailsScreen = () => {
                 <Body14 semiBold primaryColor>
                   2 000 грн.{" "}
                 </Body14>
-                <Body14>збірано з 10 000 грн.</Body14>
+                <Body14>зібрано з 10 000 грн.</Body14>
               </View>
               <View
                 style={{
@@ -91,7 +85,7 @@ const RequestDetailsScreen = () => {
               </View>
               <View style={{ flexDirection: "row" }}>
                 <Body14 semiBold primaryColor>
-                  10 людей{" "}
+                  10 людей
                 </Body14>
                 <Body14>вже внесли кошти</Body14>
               </View>
@@ -99,7 +93,12 @@ const RequestDetailsScreen = () => {
           </View>
         </View>
       </ScrollView>
-      <LargeFAB icon='volunteer-activism'>Допомогти</LargeFAB>
+      <LargeFAB
+        icon='hand-heart-outline'
+        onPress={() => navigation.navigate("Help Variants")}
+      >
+        Допомогти
+      </LargeFAB>
     </>
   );
 };
