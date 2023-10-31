@@ -1,29 +1,20 @@
 import { ScrollView, StyleSheet, View, Dimensions, Image } from "react-native";
 
-import IconButton from "../components/buttons/IconButton";
-import BackButton from "../components/buttons/BackButton";
-import TitleLarge from "../components/typography/TitleLarge";
-import LabelSemiBold from "../components/typography/TitleLarge";
-import Body16 from "../components/typography/Body16";
-import Body14 from "../components/typography/Body14";
-import { COLORS } from "../constants/colors";
-import RightArrowBlock from "../components/RightArrowBlock";
-import LargeFAB from "../components/buttons/LargeFAB";
-import CardChip from "../components/chips/CardChip";
-import ImageCarousel from "../components/ImageCarousel";
+import TitleLarge from "../../components/typography/TitleLarge";
+import LabelSemiBold from "../../components/typography/TitleLarge";
+import Body16 from "../../components/typography/Body16";
+import Body14 from "../../components/typography/Body14";
+import { COLORS } from "../../constants/colors";
+import RightArrowBlock from "../../components/RightArrowBlock";
+import LargeFAB from "../../components/buttons/LargeFAB";
+import CardChip from "../../components/chips/CardChip";
+import ImageCarousel from "../../components/ImageCarousel";
 
 const screenDimensions = Dimensions.get("screen");
 
 const RequestDetailsScreen = ({ navigation }) => {
   return (
     <>
-      <View style={styles.RequestDetails__navigation}>
-        <BackButton />
-        <View style={styles.RequestDetails__rightNavigation}>
-          <IconButton icon='bookmark-outline' />
-          <IconButton icon='dots-horizontal' />
-        </View>
-      </View>
       <ScrollView>
         <ImageCarousel />
         <View style={styles.RequestDetails__content}>
@@ -42,27 +33,45 @@ const RequestDetailsScreen = ({ navigation }) => {
           </View>
           <View style={styles.RequestDetails__block}>
             <LabelSemiBold>Вже допомогли</LabelSemiBold>
-            <RightArrowBlock />
-          </View>
-          <View style={{ marginTop: 40 }}>
-            <LabelSemiBold>Локація</LabelSemiBold>
-            <Image
-              source={require("../assets/images/dummyImages/map.png")}
-              style={styles.RequestDetails__locationImage}
+            <RightArrowBlock
+              onPress={() => navigation.navigate("Already Helped")}
             />
-            <View style={styles.RequestDetails__locationChip}>
-              <CardChip icon='map-marker-outline'>Київ</CardChip>
+          </View>
+          <View style={styles.RequestDetails__block}>
+            <LabelSemiBold>Адреса</LabelSemiBold>
+            <View style={styles.RequestDetails__locationList}>
+              <View style={styles.RequestDetails__locationListItem}>
+                <Body14 color={COLORS.onBackgroundVariant}> Місто </Body14>
+                <Body14 semiBold color={COLORS.onBackground}>
+                  Київ
+                </Body14>
+              </View>
+              <View style={styles.RequestDetails__locationListItem}>
+                <Body14 color={COLORS.onBackgroundVariant}> Вулиця </Body14>
+                <Body14 semiBold color={COLORS.onBackground}>
+                  Олександрівська
+                </Body14>
+              </View>
+              <View style={styles.RequestDetails__locationListItem}>
+                <Body14 color={COLORS.onBackgroundVariant}> Будинок </Body14>
+                <Body14 semiBold color={COLORS.onBackground}>
+                  9А
+                </Body14>
+              </View>
             </View>
           </View>
           <View style={styles.RequestDetails__block}>
             <LabelSemiBold>Автор Запиту</LabelSemiBold>
-            <RightArrowBlock showAuthor />
+            <RightArrowBlock
+              showPerson
+              onPress={() => navigation.navigate("Another Profile")}
+            />
           </View>
           <View style={styles.RequestDetails__block}>
             <LabelSemiBold>Збір коштів</LabelSemiBold>
             <View style={styles.RequestDetails__donateInfo}>
               <View style={{ flexDirection: "row" }}>
-                <Body14 semiBold primaryColor>
+                <Body14 semiBold color={COLORS.primary}>
                   2 000 грн.{" "}
                 </Body14>
                 <Body14>зібрано з 10 000 грн.</Body14>
@@ -84,8 +93,8 @@ const RequestDetailsScreen = ({ navigation }) => {
                 />
               </View>
               <View style={{ flexDirection: "row" }}>
-                <Body14 semiBold primaryColor>
-                  10 людей
+                <Body14 semiBold color={COLORS.primary}>
+                  10 людей{" "}
                 </Body14>
                 <Body14>вже внесли кошти</Body14>
               </View>
@@ -135,17 +144,15 @@ const styles = StyleSheet.create({
     gap: 16,
   },
 
-  RequestDetails__locationImage: {
-    marginTop: 16,
-    height: 200,
-    width: screenDimensions.width - 32,
-    borderRadius: 12,
+  RequestDetails__locationList: {
+    gap: 16,
   },
-  RequestDetails__locationChip: {
-    position: "absolute",
-    bottom: 8,
-    left: 8,
+
+  RequestDetails__locationListItem: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
+
   RequestDetails__donateInfo: {
     gap: 8,
   },

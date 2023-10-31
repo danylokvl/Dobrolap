@@ -5,8 +5,10 @@ import LabelLarge from "../components/typography/LabelLarge";
 import Body14 from "../components/typography/Body14";
 import { COLORS } from "../constants/colors";
 import Body12 from "./typography/Body12";
+import { useState } from "react";
 
-const RightArrowBlock = ({ showAuthor }) => {
+const RightArrowBlock = ({ showPerson, onPress }) => {
+  const [isPressed, setIsPressed] = useState(false);
   let content = (
     <View style={styles.RightArrowBlock__imagesAndCount}>
       <View style={styles.RightArrowBlock__images}>
@@ -23,11 +25,13 @@ const RightArrowBlock = ({ showAuthor }) => {
           source={require("../assets/images/dummyImages/alina.png")}
         />
       </View>
-      <Body14>12 людей</Body14>
+      <Body14 color={isPressed ? COLORS.onPrimaryContainer : null}>
+        12 людей
+      </Body14>
     </View>
   );
 
-  if (showAuthor)
+  if (showPerson)
     content = (
       <View style={styles.RightArrowBlock__imageAndText}>
         <Image
@@ -35,34 +39,53 @@ const RightArrowBlock = ({ showAuthor }) => {
           source={require("../assets/images/dummyImages/dmytro-ostapenko.jpg")}
         />
         <View>
-          <LabelLarge>Дмитро Остапенко</LabelLarge>
-          <Body12 grey>Волонтер</Body12>
+          <LabelLarge color={isPressed ? COLORS.onPrimaryContainer : null}>
+            Дмитро Остапенко
+          </LabelLarge>
+          <Body12
+            color={
+              isPressed ? COLORS.onPrimaryContainer : COLORS.onBackgroundVariant
+            }
+          >
+            Волонтер
+          </Body12>
         </View>
       </View>
     );
 
   return (
-    <View>
-      <View style={styles.RightArrowBlock__content}>
+    <Pressable
+      onPressIn={() => setIsPressed(true)}
+      onPressOut={() => setIsPressed(false)}
+      onPress={onPress}
+    >
+      <View
+        style={
+          isPressed
+            ? [
+                styles.RightArrowBlock__content,
+                { backgroundColor: COLORS.primaryContainer },
+              ]
+            : styles.RightArrowBlock__content
+        }
+      >
         {content}
-        <Pressable
-          style={({ pressed }) => [{ color: pressed ? COLORS.primary : null }]}
-        >
-          <MaterialIcons
-            name='arrow-forward'
-            size={24}
-            color={COLORS.onBackgroundVariant}
-          />
-        </Pressable>
+
+        <MaterialIcons
+          name='arrow-forward'
+          size={24}
+          color={
+            isPressed ? COLORS.onPrimaryContainer : COLORS.onBackgroundVariant
+          }
+        />
       </View>
-    </View>
+    </Pressable>
   );
 };
 
 const styles = StyleSheet.create({
   RightArrowBlock__content: {
     borderRadius: 12,
-
     padding: 8,
     backgroundColor: COLORS.neutral95,
     flexDirection: "row",

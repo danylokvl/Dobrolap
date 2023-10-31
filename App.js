@@ -8,10 +8,10 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import { COLORS } from "./constants/colors";
 import Loading from "./screens/Loading";
-import HomeScreen from "./screens/HomeScreen";
-import ChatScreen from "./screens/ChatScreen";
-import HelpScreenNavigator from "./screens/HelpScreenNavigator";
-import ProfileScreen from "./screens/ProfileScreen";
+import HomeScreen from "./screens/home/HomeScreen";
+import ChatScreen from "./screens/chat/ChatScreen";
+import HelpScreenNavigator from "./screens/help/HelpScreenNavigator";
+import ProfileScreen from "./screens/account/ProfileScreen";
 
 const BottomTabs = createBottomTabNavigator();
 

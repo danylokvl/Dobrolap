@@ -1,9 +1,9 @@
 import { Text, View, StyleSheet } from "react-native";
 
-const MakeRequestScreen = () => {
+const AnotherProfileScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Hello, you are on the MakeRequestScreen !</Text>
+      <Text>Hello, you are on the AnotherProfile Screen !</Text>
     </View>
   );
 };
@@ -16,4 +16,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MakeRequestScreen;
+export default AnotherProfileScreen;

@@ -17,7 +17,7 @@ const LargeFAB = (props) => {
       ]}
     >
       <MaterialCommunityIcons
-        name={props.icon}
+        name={isPressed ? props.icon.replace("-outline", "") : props.icon}
         size={24}
         color={isPressed ? COLORS.onPrSecTertErr : COLORS.onPrimaryContainer}
       />

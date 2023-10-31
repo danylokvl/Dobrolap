@@ -1,7 +1,7 @@
 import { Text, StyleSheet } from "react-native";
 import { COLORS } from "../../constants/colors";
 
-const LabelSemiBold = ({ children, centered }) => {
+const TitleLarge = ({ children, centered }) => {
   return (
     <Text
       style={
@@ -26,4 +26,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LabelSemiBold;
+export default TitleLarge;

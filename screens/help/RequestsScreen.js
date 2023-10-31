@@ -3,10 +3,10 @@ import { useRef } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import FilterChip from "../components/chips/FilterChip";
-import RequestScreenCard from "../components/cards/RequestScreenCard";
+import FilterChip from "../../components/chips/FilterChip";
+import RequestScreenCard from "../../components/cards/RequestScreenCard";
 import RequestDetailsScreen from "./RequestDetailsScreen";
-import LargeFAB from "../components/buttons/LargeFAB";
+import LargeFAB from "../../components/buttons/LargeFAB";
 
 const Stack = createNativeStackNavigator();
 

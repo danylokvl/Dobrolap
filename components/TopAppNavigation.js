@@ -1,16 +1,25 @@
 import { View, StyleSheet } from "react-native";
 import IconButton from "./buttons/IconButton";
-import BackButton from "./buttons/BackButton";
 import Headline from "./typography/Headline";
 
-const TopAppNavigation = ({ headline, rightButtonIcon }) => {
+const TopAppNavigation = ({
+  navigation,
+  headline,
+  additionalButton1,
+  additionalButton2,
+}) => {
   return (
-    <>
-      <View style={styles.navigationContainer}>
-        <BackButton />
-        {rightButtonIcon ? <IconButton icon={rightButtonIcon} /> : null}
+    <View style={styles.navigationContainer}>
+      <IconButton icon='arrow-left' onPress={() => navigation.goBack()} />
+      <View style={{ justifySelf: "flex-end" }}>
+        <Headline>{headline}</Headline>
       </View>
-    </>
+
+      <View style={styles.additionalButtons}>
+        {additionalButton1 ? <IconButton icon={additionalButton1} /> : null}
+        {additionalButton2 ? <IconButton icon={additionalButton2} /> : null}
+      </View>
+    </View>
   );
 };
 
@@ -24,6 +33,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+  },
+
+  additionalButtons: {
+    flexDirection: "row",
+    gap: 16,
   },
 });
 

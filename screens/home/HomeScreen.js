@@ -1,8 +1,8 @@
 import { Text, View, StyleSheet } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import Headline from "../components/typography/Headline";
-import IconButton from "../components/buttons/IconButton";
+import Headline from "../../components/typography/Headline";
+import IconButton from "../../components/buttons/IconButton";
 
 const HomeScreen = () => {
   return (

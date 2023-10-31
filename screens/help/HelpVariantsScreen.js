@@ -1,21 +1,21 @@
 import { View, StyleSheet, ScrollView } from "react-native";
 
-import LabelSemiBold from "../components/typography/TitleLarge";
-import HelpVariantCard from "../components/cards/HelpVariantCard";
-import TopAppNavigation from "../components/TopAppNavigation";
-import Headline from "../components/typography/Headline";
+import LabelSemiBold from "../../components/typography/TitleLarge";
+import HelpVariantCard from "../../components/cards/HelpVariantCard";
+import Headline from "../../components/typography/Headline";
 
-const HelpVariantsScreen = () => {
+const HelpVariantsScreen = ({ navigation }) => {
   return (
     <>
-      <TopAppNavigation headline='Допомога' />
       <ScrollView style={{ flex: 1 }}>
         <View style={styles.container}>
           <Headline primaryColor>Допомога</Headline>
           <LabelSemiBold centered>
             Оберіть, як ви хочете допомогти
           </LabelSemiBold>
-          <HelpVariantCard>Внесення Коштів</HelpVariantCard>
+          <HelpVariantCard onPress={() => navigation.navigate("Donate")}>
+            Внесення Коштів
+          </HelpVariantCard>
           <HelpVariantCard>Перетримка / Адопція</HelpVariantCard>
           <HelpVariantCard>Волонтерство</HelpVariantCard>
           <HelpVariantCard>Ветеринарна Допомога</HelpVariantCard>

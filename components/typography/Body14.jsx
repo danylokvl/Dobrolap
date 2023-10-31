@@ -1,13 +1,13 @@
 import { Text, StyleSheet } from "react-native";
 import { COLORS } from "../../constants/colors";
 
-const Body14 = ({ children, semiBold, primaryColor }) => {
+const Body14 = ({ children, semiBold, color }) => {
   return (
     <Text
       style={[
         styles.textStyle,
         semiBold ? styles.semiBold : null,
-        primaryColor ? styles.primaryColor : null,
+        { color: color },
       ]}
     >
       {children}

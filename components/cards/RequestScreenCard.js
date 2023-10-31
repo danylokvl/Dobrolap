@@ -117,7 +117,7 @@ const RequestScreenCard = () => {
           ]}
         >
           <MaterialCommunityIcons
-            name='hand-heart-outline'
+            name={helpButtonIsPressed ? "hand-heart" : "hand-heart-outline"}
             size={24}
             color={
               helpButtonIsPressed
