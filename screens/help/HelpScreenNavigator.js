@@ -56,7 +56,12 @@ const HelpScreenNavigator = () => {
         <Stack.Screen
           name='Donate'
           component={DonateScreen}
-          options={{ animation: "slide_from_right" }}
+          options={{
+            animation: "slide_from_right",
+            header: (props) => (
+              <TopAppNavigation {...props} add2StepsProgressBar />
+            ),
+          }}
         />
       </Stack.Group>
     </Stack.Navigator>

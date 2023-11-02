@@ -4,7 +4,7 @@ import Headline from "../components/typography/Headline";
 const Loading = () => {
   return (
     <View style={styles.container}>
-      <Headline>Loading...</Headline>
+      <Text>Loading...</Text>
     </View>
   );
 };
