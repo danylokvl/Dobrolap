@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { Dimensions, FlatList, Image, StyleSheet, View } from "react-native";
 
-import { COLORS } from "../constants/colors";
+import { COLORS } from "../../constants/colors";
 
 const screenDimensions = Dimensions.get("screen");
 
 const IMAGES = [
-  { image: require("../assets/images/dummyImages/dog-near-tank.png") },
-  { image: require("../assets/images/dummyImages/homeless-cat.jpg") },
-  { image: require("../assets/images/dummyImages/dog-with-soldier.jpg") },
-  { image: require("../assets/images/dummyImages/dog-near-puddle.jpg") },
-  { image: require("../assets/images/dummyImages/cat-with-soldier.jpg") },
+  { image: require("../../assets/images/dummyImages/dog-near-tank.png") },
+  { image: require("../../assets/images/dummyImages/homeless-cat.jpg") },
+  { image: require("../../assets/images/dummyImages/dog-with-soldier.jpg") },
+  { image: require("../../assets/images/dummyImages/dog-near-puddle.jpg") },
+  { image: require("../../assets/images/dummyImages/cat-with-soldier.jpg") },
 ];
 
 const ImageCarousel = () => {

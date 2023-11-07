@@ -1,6 +1,6 @@
 import { View, StyleSheet } from "react-native";
 import Headline from "../../components/typography/Headline";
-import RightArrowBlock from "../../components/RightArrowBlock";
+import RightArrowBlock from "../../components/help-components/RightArrowBlock";
 
 const AlreadyHelpedScreen = () => {
   return (

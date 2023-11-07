@@ -8,8 +8,6 @@ import RequestScreenCard from "../../components/cards/RequestScreenCard";
 import RequestDetailsScreen from "./RequestDetailsScreen";
 import LargeFAB from "../../components/buttons/LargeFAB";
 
-const Stack = createNativeStackNavigator();
-
 const RequestsScreen = () => {
   const scrollViewRef = useRef(null);
 

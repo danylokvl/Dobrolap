@@ -1,10 +1,10 @@
 import { StyleSheet, View, Image, Pressable } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import LabelLarge from "../components/typography/LabelLarge";
-import Body14 from "../components/typography/Body14";
-import { COLORS } from "../constants/colors";
-import Body12 from "./typography/Body12";
+import LabelLarge from "../typography/LabelLarge";
+import Body14 from "../typography/Body14";
+import { COLORS } from "../../constants/colors";
+import Body12 from "../typography/Body12";
 import { useState } from "react";
 
 const RightArrowBlock = ({ showPerson, onPress }) => {
@@ -14,15 +14,15 @@ const RightArrowBlock = ({ showPerson, onPress }) => {
       <View style={styles.RightArrowBlock__images}>
         <Image
           style={styles.RightArrowBlock__image}
-          source={require("../assets/images/dummyImages/artem.png")}
+          source={require("../../assets/images/dummyImages/artem.png")}
         />
         <Image
           style={styles.RightArrowBlock__image}
-          source={require("../assets/images/dummyImages/andrii.png")}
+          source={require("../../assets/images/dummyImages/andrii.png")}
         />
         <Image
           style={styles.RightArrowBlock__image}
-          source={require("../assets/images/dummyImages/alina.png")}
+          source={require("../../assets/images/dummyImages/alina.png")}
         />
       </View>
       <Body14 color={isPressed ? COLORS.onPrimaryContainer : null}>
@@ -36,7 +36,7 @@ const RightArrowBlock = ({ showPerson, onPress }) => {
       <View style={styles.RightArrowBlock__imageAndText}>
         <Image
           style={styles.RightArrowBlock__image}
-          source={require("../assets/images/dummyImages/dmytro-ostapenko.jpg")}
+          source={require("../../assets/images/dummyImages/dmytro-ostapenko.jpg")}
         />
         <View>
           <LabelLarge color={isPressed ? COLORS.onPrimaryContainer : null}>

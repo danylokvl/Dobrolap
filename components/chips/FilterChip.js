@@ -4,31 +4,41 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import { COLORS } from "../../constants/colors";
 
-const FilterChip = ({ children, scrollViewRef }) => {
+const FilterChip = ({
+  children,
+  scrollViewRef,
+  removeCheckIcon,
+  isChecked,
+  onPressVariant,
+}) => {
   const [chipEnabled, setChipEnabled] = useState(false);
   return (
     <Pressable
       style={[
         styles.chip,
         styles.chipDisabledStyle,
-        chipEnabled && styles.chipEnabledStyle,
+        (chipEnabled || isChecked) && styles.chipEnabledStyle,
       ]}
       onPress={() => {
-        setChipEnabled(!chipEnabled);
-        if (scrollViewRef) scrollViewRef.current.scrollToEnd();
+        if (onPressVariant) {
+          onPressVariant();
+        } else {
+          setChipEnabled(!chipEnabled);
+          if (scrollViewRef) scrollViewRef.current.scrollToEnd();
+        }
       }}
     >
-      {chipEnabled && (
+      {chipEnabled && !removeCheckIcon ? (
         <MaterialCommunityIcons
           name='check'
           size={18}
           color={COLORS.onSecondaryContainer}
         />
-      )}
+      ) : null}
       <Text
         style={[
           styles.text,
-          chipEnabled && { color: COLORS.onSecondaryContainer },
+          (chipEnabled || isChecked) && { color: COLORS.onSecondaryContainer },
         ]}
       >
         {children}
@@ -44,8 +54,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 8,
     borderRadius: 8,
-    paddingVertical: 10,
-    paddingHorizontal: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 18,
   },
   text: {
     color: COLORS.outline,

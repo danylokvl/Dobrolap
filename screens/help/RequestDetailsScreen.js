@@ -1,14 +1,14 @@
-import { ScrollView, StyleSheet, View, Dimensions, Image } from "react-native";
+import { ScrollView, StyleSheet, View, Dimensions } from "react-native";
 
 import TitleLarge from "../../components/typography/TitleLarge";
 import LabelSemiBold from "../../components/typography/TitleLarge";
 import Body16 from "../../components/typography/Body16";
 import Body14 from "../../components/typography/Body14";
 import { COLORS } from "../../constants/colors";
-import RightArrowBlock from "../../components/RightArrowBlock";
+import RightArrowBlock from "../../components/help-components/RightArrowBlock";
 import LargeFAB from "../../components/buttons/LargeFAB";
 import CardChip from "../../components/chips/CardChip";
-import ImageCarousel from "../../components/ImageCarousel";
+import ImageCarousel from "../../components/help-components/ImageCarousel";
 
 const screenDimensions = Dimensions.get("screen");
 
