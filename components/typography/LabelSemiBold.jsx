@@ -1,8 +1,8 @@
 import { Text, StyleSheet } from "react-native";
 import { COLORS } from "../../constants/colors";
 
-const LabelSemiBold = ({ children }) => {
-  return <Text style={styles.textStyle}>{children}</Text>;
+const LabelSemiBold = ({ children, color }) => {
+  return <Text style={[styles.textStyle, { color: color }]}>{children}</Text>;
 };
 
 const styles = StyleSheet.create({
