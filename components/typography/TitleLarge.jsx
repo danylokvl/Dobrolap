@@ -1,12 +1,14 @@
 import { Text, StyleSheet } from "react-native";
 import { COLORS } from "../../constants/colors";
 
-const TitleLarge = ({ children, centered }) => {
+const TitleLarge = ({ children, centered, color }) => {
   return (
     <Text
-      style={
-        centered ? [styles.textStyle, styles.textCentered] : [styles.textStyle]
-      }
+      style={[
+        styles.textStyle,
+        { color: color },
+        centered && styles.textCentered,
+      ]}
     >
       {children}
     </Text>

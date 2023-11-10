@@ -7,8 +7,6 @@ const TopAppNavigation = ({
   navigation,
   additionalButton1,
   additionalButton2,
-  headline,
-  add2StepsProgressBar,
 }) => {
   return (
     <View style={styles.navigationContainer}>
@@ -19,11 +17,6 @@ const TopAppNavigation = ({
           {additionalButton2 ? <IconButton icon={additionalButton2} /> : null}
         </View>
       </View>
-      {add2StepsProgressBar ? (
-        <View style={styles.progressBarContainer}>
-          <ProgressBar2Steps />
-        </View>
-      ) : null}
     </View>
   );
 };

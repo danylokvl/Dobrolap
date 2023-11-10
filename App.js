@@ -40,7 +40,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <NavigationContainer theme={DobrolapTheme}>
-        <StatusBar style='auto' backgroundColor={COLORS.background} />
+        <StatusBar backgroundColor={COLORS.background} />
 
         <BottomTabs.Navigator
           screenOptions={{

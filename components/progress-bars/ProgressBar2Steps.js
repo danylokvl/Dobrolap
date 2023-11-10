@@ -1,7 +1,7 @@
 import { Animated, Button, StyleSheet, View, Easing } from "react-native";
 import { COLORS } from "../../constants/colors";
 
-const ProgressBar2Steps = () => {
+const ProgressBar2Steps = ({ start }) => {
   let progress = new Animated.Value(0);
   let lastCircleColorValue = new Animated.Value(0);
   const width = progress.interpolate({
@@ -20,12 +20,12 @@ const ProgressBar2Steps = () => {
     Animated.sequence([
       Animated.timing(progress, {
         toValue: 100,
-        duration: 800,
+        duration: 1500,
         useNativeDriver: false,
       }),
       Animated.timing(lastCircleColorValue, {
         toValue: 1,
-        duration: 210,
+        duration: 100,
         easing: Easing.linear,
         useNativeDriver: true,
       }),
@@ -44,6 +44,7 @@ const ProgressBar2Steps = () => {
           />
         </View>
       </View>
+      {start && Start()}
     </>
   );
 };

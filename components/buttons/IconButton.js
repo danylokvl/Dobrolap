@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     justifyContent: "center",
     alignItems: "center",
-    elevation: 8,
+    elevation: 10,
     shadowColor: COLORS.shadowColor,
   },
   variantColor: {
@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
 
   buttonPressed: {
     backgroundColor: COLORS.primaryContainer,
+    elevation: 5,
   },
 });
 

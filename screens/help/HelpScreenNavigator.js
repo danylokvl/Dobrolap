@@ -6,6 +6,7 @@ import AlreadyHelpedScreen from "./AlreadyHelpedScreen";
 import TopAppNavigation from "../../components/TopAppNavigation";
 import AnotherProfileScreen from "../account/AnotherProfileScreen";
 import DonateScreen from "./DonateScreen";
+import PaymentMethodScreen from "./PaymentMethodScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -60,6 +61,20 @@ const HelpScreenNavigator = () => {
             animation: "slide_from_right",
             header: (props) => (
               <TopAppNavigation {...props} add2StepsProgressBar />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name='Payment Methods'
+          component={PaymentMethodScreen}
+          options={{
+            animation: "slide_from_right",
+            header: (props) => (
+              <TopAppNavigation
+                {...props}
+                add2StepsProgressBar
+                additionalButton1='plus'
+              />
             ),
           }}
         />

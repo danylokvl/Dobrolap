@@ -1,19 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StyleSheet, View, Text, TextInput } from "react-native";
 
 import FilterChip from "../chips/FilterChip";
 import LabelSemiBold from "../typography/LabelSemiBold";
 import { COLORS } from "../../constants/colors";
 
-const DonateInput = () => {
+const DonateInput = ({ onValueChange }) => {
   const [inputValue, setInputValue] = useState("");
   const [inputValueIsChanged, setInputValueIsChanged] = useState(false);
   const [currentSelectedItem, setCurrentSelectedItem] = useState(3);
 
   const donateVariants = ["100", "200", "500", "1 000", "2 000", "5 000"];
 
+  useEffect(() => {
+    if (inputValue !== "") onValueChange(inputValue);
+    else onValueChange(donateVariants[currentSelectedItem]);
+  }, [inputValue, currentSelectedItem]);
+
   function onPressFilterChip(index) {
     setCurrentSelectedItem(index);
+
     if (inputValueIsChanged) {
       setInputValue("");
       setInputValueIsChanged(false);
@@ -70,7 +76,6 @@ const DonateInput = () => {
 
 const styles = StyleSheet.create({
   inputAndLabel: {
-    marginTop: 110,
     width: "100%",
     alignItems: "center",
     gap: 8,

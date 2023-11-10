@@ -16,11 +16,14 @@ const LargeFAB = (props) => {
         pressed ? styles.buttonPressed : null,
       ]}
     >
-      <MaterialCommunityIcons
-        name={isPressed ? props.icon.replace("-outline", "") : props.icon}
-        size={24}
-        color={isPressed ? COLORS.onPrSecTertErr : COLORS.onPrimaryContainer}
-      />
+      {props.icon && (
+        <MaterialCommunityIcons
+          name={isPressed ? props.icon.replace("-outline", "") : props.icon}
+          size={24}
+          color={isPressed ? COLORS.onPrSecTertErr : COLORS.onPrimaryContainer}
+        />
+      )}
+
       <Text style={[styles.text, isPressed ? styles.textPressed : null]}>
         {props.children}
       </Text>
