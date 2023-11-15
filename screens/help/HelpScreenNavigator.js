@@ -7,6 +7,7 @@ import TopAppNavigation from "../../components/TopAppNavigation";
 import AnotherProfileScreen from "../account/AnotherProfileScreen";
 import DonateScreen from "./DonateScreen";
 import PaymentMethodScreen from "./PaymentMethodScreen";
+import ThankYouScreen from "./ThankYouScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -73,10 +74,15 @@ const HelpScreenNavigator = () => {
               <TopAppNavigation
                 {...props}
                 add2StepsProgressBar
-                additionalButton1='plus'
+                //   additionalButton1='plus'
               />
             ),
           }}
+        />
+        <Stack.Screen
+          name='Thank You Screen'
+          component={ThankYouScreen}
+          options={{ animation: "slide_from_right", headerShown: false }}
         />
       </Stack.Group>
     </Stack.Navigator>

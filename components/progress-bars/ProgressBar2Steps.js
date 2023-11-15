@@ -1,4 +1,5 @@
 import { Animated, Button, StyleSheet, View, Easing } from "react-native";
+import { useLayoutEffect } from "react";
 import { COLORS } from "../../constants/colors";
 
 const ProgressBar2Steps = ({ start }) => {
@@ -16,21 +17,24 @@ const ProgressBar2Steps = ({ start }) => {
     extrapolate: "clamp",
   });
 
-  function Start() {
-    Animated.sequence([
-      Animated.timing(progress, {
-        toValue: 100,
-        duration: 1500,
-        useNativeDriver: false,
-      }),
-      Animated.timing(lastCircleColorValue, {
-        toValue: 1,
-        duration: 100,
-        easing: Easing.linear,
-        useNativeDriver: true,
-      }),
-    ]).start();
-  }
+  useLayoutEffect(() => {
+    function Start() {
+      Animated.sequence([
+        Animated.timing(progress, {
+          toValue: 100,
+          duration: 1500,
+          useNativeDriver: false,
+        }),
+        Animated.timing(lastCircleColorValue, {
+          toValue: 1,
+          duration: 100,
+          easing: Easing.linear,
+          useNativeDriver: true,
+        }),
+      ]).start();
+    }
+    if (start) Start();
+  }, []);
 
   return (
     <>
@@ -40,11 +44,15 @@ const ProgressBar2Steps = ({ start }) => {
         <View style={styles.circlesContainer}>
           <View style={[styles.circle, styles.activeCircle]} />
           <Animated.View
-            style={[styles.circle, { backgroundColor: circleColor }]}
+            style={[
+              styles.circle,
+              {
+                backgroundColor: COLORS.primary,
+              },
+            ]}
           />
         </View>
       </View>
-      {start && Start()}
     </>
   );
 };

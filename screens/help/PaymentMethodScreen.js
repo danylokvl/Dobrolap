@@ -8,7 +8,7 @@ import CreditCard from "../../components/help-components/CreditCard";
 import RadioButtonBlock from "../../components/help-components/RadioButtonBlock";
 import PrimaryButton from "../../components/buttons/PrimaryButton";
 
-const PaymentMethodScreen = ({ route }) => {
+const PaymentMethodScreen = ({ route, navigation }) => {
   const paymentMethods = ["Visa", "MasterCard", "Google Pay", "Apple Pay"];
   const [currentSelectedItem, setCurrentSelectedItem] = useState(0);
 
@@ -33,7 +33,10 @@ const PaymentMethodScreen = ({ route }) => {
           );
         })}
       </View>
-      <PrimaryButton icon='hand-coin-outline'>{`Сплатити ${route.params.amount} грн`}</PrimaryButton>
+      <PrimaryButton
+        icon='hand-coin-outline'
+        onPress={() => navigation.navigate("Thank You Screen")}
+      >{`Сплатити ${route.params.amount} грн`}</PrimaryButton>
     </ScrollView>
   );
 };

@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     fontFamily: "FixelText-Regular",
     fontSize: 16,
     lineHeight: 24,
+    letterSpacing: 0.25,
   },
 });
 
