@@ -16,7 +16,7 @@ const PrimaryButton = ({ children, inActive, onPress, icon }) => {
         inActive ? styles.backgroundVariantColor : styles.primaryColor,
         isPressed && styles.pressed,
       ]}
-      onPressIn={() => setIsPressed(true)}
+      onPressIn={() => !inActive && setIsPressed(true)}
       onPressOut={() => setTimeout(setIsPressed, 100, false)}
     >
       {icon && (

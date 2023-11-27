@@ -7,7 +7,6 @@ import Body14 from "../../components/typography/Body14";
 import { COLORS } from "../../constants/colors";
 import RightArrowBlock from "../../components/help-components/RightArrowBlock";
 import LargeFAB from "../../components/buttons/LargeFAB";
-import CardChip from "../../components/chips/CardChip";
 import ImageCarousel from "../../components/help-components/ImageCarousel";
 
 const screenDimensions = Dimensions.get("screen");

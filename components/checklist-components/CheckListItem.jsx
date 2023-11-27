@@ -2,11 +2,11 @@ import { View, StyleSheet } from "react-native";
 import Body14 from "../typography/Body14";
 import Check from "./Check";
 
-const CheckListItem = ({ children }) => {
+const CheckListItem = ({ children, chosenByDefault }) => {
   return (
     <View style={styles.checkListItem}>
       <Body14>{children}</Body14>
-      <Check />
+      <Check chosenByDefault={chosenByDefault} />
     </View>
   );
 };
@@ -14,7 +14,8 @@ const CheckListItem = ({ children }) => {
 const styles = StyleSheet.create({
   checkListItem: {
     flexDirection: "row",
-    columnGap: 60,
+    justifyContent: "space-between",
+    maxWidth: "60%",
     alignItems: "center",
   },
 });

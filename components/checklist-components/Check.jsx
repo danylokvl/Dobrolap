@@ -3,10 +3,10 @@ import { useState } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { COLORS } from "../../constants/colors";
 
-const Check = () => {
+const Check = ({ chosenByDefault }) => {
   const [icon, setIcon] = useState({
-    name: "checkbox-blank-outline",
-    color: COLORS.onBackground,
+    name: chosenByDefault ? "checkbox-marked" : "checkbox-blank-outline",
+    color: chosenByDefault ? COLORS.primary : COLORS.onBackground,
   });
 
   function IconChange() {

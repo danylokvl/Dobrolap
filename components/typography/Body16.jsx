@@ -1,8 +1,18 @@
 import { Text, StyleSheet } from "react-native";
 import { COLORS } from "../../constants/colors";
 
-const Body16 = ({ children, color }) => {
-  return <Text style={[styles.textStyle, { color: color }]}>{children}</Text>;
+const Body16 = ({ children, color, additionalStyles }) => {
+  return (
+    <Text
+      style={[
+        styles.textStyle,
+        { color: color },
+        additionalStyles && { ...additionalStyles },
+      ]}
+    >
+      {children}
+    </Text>
+  );
 };
 
 const styles = StyleSheet.create({

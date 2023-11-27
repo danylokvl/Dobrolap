@@ -1,13 +1,13 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import RequestsScreen from "./RequestsScreen";
-import RequestDetailsScreen from "./RequestDetailsScreen";
-import HelpVariantsScreen from "./HelpVariantsScreen";
-import AlreadyHelpedScreen from "./AlreadyHelpedScreen";
-import TopAppNavigation from "../../components/TopAppNavigation";
-import AnotherProfileScreen from "../account/AnotherProfileScreen";
-import DonateScreen from "./DonateScreen";
-import PaymentMethodScreen from "./PaymentMethodScreen";
-import ThankYouScreen from "./ThankYouScreen";
+import RequestsScreen from "../screens/help/RequestsScreen";
+import RequestDetailsScreen from "../screens/help/RequestDetailsScreen";
+import HelpVariantsScreen from "../screens/help/HelpVariantsScreen";
+import AlreadyHelpedScreen from "../screens/help/AlreadyHelpedScreen";
+import TopAppNavigation from "../components/TopAppNavigation";
+import AnotherProfileScreen from "../screens/account/AnotherProfileScreen";
+import DonateScreen from "../screens/help/DonateScreen";
+import PaymentMethodScreen from "../screens/help/PaymentMethodScreen";
+import ThankYouScreen from "../screens/help/ThankYouScreen";
 
 const Stack = createNativeStackNavigator();
 

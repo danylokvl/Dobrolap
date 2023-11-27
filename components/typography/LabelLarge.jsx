@@ -1,8 +1,12 @@
 import { Text, StyleSheet } from "react-native";
 import { COLORS } from "../../constants/colors";
 
-const LabelLarge = ({ children, color }) => {
-  return <Text style={[styles.textStyle, { color: color }]}>{children}</Text>;
+const LabelLarge = ({ children, color, additionalStyles }) => {
+  return (
+    <Text style={[styles.textStyle, { color: color }, additionalStyles]}>
+      {children}
+    </Text>
+  );
 };
 
 const styles = StyleSheet.create({
